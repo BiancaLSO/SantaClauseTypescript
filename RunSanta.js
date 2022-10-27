@@ -1,0 +1,18 @@
+"use strict";
+exports.__esModule = true;
+var Bag_1 = require("./Bag");
+var BagType_1 = require("./BagType");
+var Present_1 = require("./Present");
+var PresentType_1 = require("./PresentType");
+var Santa_1 = require("./Santa");
+var Sled_1 = require("./Sled");
+var santa = new Santa_1.Santa("Santa Clause", 65);
+var sled = new Sled_1.Sled(santa);
+var bag = new Bag_1.Bag(25, BagType_1.BagType.paper);
+var presentOne = new Present_1.Present("snowboard", 9, PresentType_1.PresentType.hard);
+var presentTwo = new Present_1.Present("beanbag chair", 3, PresentType_1.PresentType.soft);
+bag.addPresent(presentOne);
+//bag.addPresent(presentTwo);
+sled.addBag(bag);
+sled.addPresentAndNewBagIfNeeded(presentTwo);
+sled.print();
